@@ -1,0 +1,17 @@
+@font-face {
+    /* Downloaded from http://www.dafont.com */
+    font-family: 'Sketch3D';
+    src: url("#{resource['fonts:Sketch3D.otf']}");
+}
+
+body {
+    color: green;
+    font-family: 'Sketch3D';
+    font-size: 40px;
+}
+
+.cat-div {
+    background-image: url("#{resource['img:gatti/gigio.jpg']}");
+    width: 600px;
+    height: 450px;
+}

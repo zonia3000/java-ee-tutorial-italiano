@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="myform">
+
+            <h:outputLabel for="titolo">Titolo:</h:outputLabel>
+            <h:inputText value="#{inserimento.titolo}" id="titolo" /><br/>
+            Pagine:
+            <h:inputText value="#{inserimento.pagine}" id="pagine" converterMessage="Inserisci un numero!" />
+            <h:message for="pagine" />
+            <br/>
+
+            <h:commandButton value="aggiungi" action="#{inserimento.aggiungiLibro()}">
+                <f:ajax execute="titolo pagine" render="listalibri" />
+            </h:commandButton>
+
+            <h:panelGroup id="listalibri">
+                <ul>
+                    <ui:repeat value="#{utente.libri}" var="libro">
+                        <li>#{libro.titolo} (#{libro.pagine})</li>
+                    </ui:repeat>
+                </ul>
+            </h:panelGroup>
+            
+            <h:commandLink action="#{inserimento.goToNuova()}">Nuova</h:commandLink>
+        </h:form>
+    </h:body>
+</html>
+
