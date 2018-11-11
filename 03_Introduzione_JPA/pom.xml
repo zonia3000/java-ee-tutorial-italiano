@@ -6,6 +6,7 @@
     <version>1.0</version>
     <packaging>jar</packaging>
     <dependencies>
+        <!-- Dipendenze per EclipseLink -->
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
@@ -17,6 +18,21 @@
             <version>2.5.2</version>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- Dipendenze per Hibernate -->
+        <!--
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.3.7.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>5.3.7.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        -->
         
         <!-- Driver per MySQL -->
         <dependency>

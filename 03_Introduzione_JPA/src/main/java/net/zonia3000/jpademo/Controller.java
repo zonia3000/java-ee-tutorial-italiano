@@ -29,6 +29,10 @@ public class Controller {
         em.close();
     }
 
+    public void close() {
+        emf.close();
+    }
+
     public List<Utente> getUtenti() {
         EntityManager em = emf.createEntityManager();
 
@@ -49,7 +53,7 @@ public class Controller {
         EntityManager em = emf.createEntityManager();
         CriteriaBuilder cb = em.getCriteriaBuilder();
 
-        CriteriaQuery cq = cb.createQuery();
+        CriteriaQuery cq = cb.createQuery(Utente.class);
         Root<Utente> root = cq.from(Utente.class);
         cq.where(cb.equal(root.get("username"), username));
 
@@ -58,7 +62,7 @@ public class Controller {
         em.close();
         return ret;
     }
-    
+
     public void aggiungiLibro(Utente utente, Libro libro) {
         EntityManager em = emf.createEntityManager();
         utente.getLibri().add(libro);

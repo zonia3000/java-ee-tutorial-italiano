@@ -3,6 +3,7 @@ package net.zonia3000.jpademo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,7 +30,11 @@ public class Utente implements Serializable {
     private String username;
     private String email;
 
-    @OneToMany
+    // NOTA: questa opzione cascade e' necessaria per Hibernate, mentre se si
+    // usa EclipseLink il programma funziona anche senza. Non mi ero accorta di
+    // questo problema quando ho fatto il video. La spiegazione sul cascade la
+    // potete trovare nel video numero 10.
+    @OneToMany(cascade = CascadeType.MERGE)
     private List<Libro> libri;
     
     public Utente() {

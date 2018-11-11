@@ -1,5 +1,14 @@
 # 03 - Introduzione alle JPA
 
+## Usare Hibernate invece di EclipseLink
+
+Per usare Hibernate al posto di EclipseLink bisogna:
+
+* andare nel pom.xml, commentare le dipendenze di EclipseLink e decommentare le dipendenze di Hibernate;
+* andare nel persistence.xml, commentare il provider di EclipseLink e decommentare il provider di Hibernate.
+
+NOTA: Hibernate ha bisogno di un'opzione `cascade` all'interno della classe Utente. Spiegazioni sul cascade si trovano nel video numero 10.
+
 ## Alternativa all'uso di MySQL
 
 L'esempio mostrato nel video usa un database MySQL. Se non avete un database MySQL potete usare un altro database. La scelta di default per Netbeans è Apache Derby, un semplice database che solitamente è incluso nell'installazione di Java.

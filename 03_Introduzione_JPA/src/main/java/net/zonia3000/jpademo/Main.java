@@ -34,5 +34,7 @@ public class Main {
         System.out.println("----\n");
 
         System.out.println("L'id di pippo e': " + controller.getUtenteByName("pippo").getId());
+        
+        controller.close();
     }
 }
