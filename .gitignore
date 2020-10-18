@@ -1,2 +1,4 @@
 **/target/
-**/nbactions.xml
+nbactions.xml
+settings.xml
+HELP.md
